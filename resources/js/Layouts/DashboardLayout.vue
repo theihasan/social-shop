@@ -14,9 +14,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import Sidebar from '@/Components/Sidebar.vue'
-import TopNavigation from '@/Components/TopNavigation.vue'
-import MobileOverlay from '@/Components/MobileOverlay.vue'
+import Sidebar from '../Components/Sidebar.vue'
+import TopNavigation from '../Components/TopNavigation.vue'
+import MobileOverlay from '../Components/MobileOverlay.vue'
 
 const sidebarOpen = ref(false)
 

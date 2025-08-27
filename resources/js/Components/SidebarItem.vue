@@ -31,17 +31,16 @@ const iconComponent = computed(() => {
     facebook: 'svg-facebook-icon',
     instagram: 'svg-instagram-icon',
     settings: 'svg-settings-icon'
-  }
-  return icons[props.item.icon] || 'svg-default-icon'
-})
+  };
+  return icons[props.item.icon] || 'svg-default-icon';
+});
 
 const linkClasses = computed(() => [
   'flex items-center px-4 py-3 text-sm font-medium rounded-2xl transition-colors',
   props.item.active 
     ? 'text-white bg-meta-blue' 
     : 'text-gray-700 hover:bg-gray-100'
-])
-});
+]);
 </script>
 <style scoped>
 </style>
