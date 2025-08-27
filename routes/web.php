@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Ihasan\SocialShop\Http\Controllers\DashboardController;
 
 
-Route::prefix(config('social-shop.prefix'))
+Route::prefix(config('social-shop.route_prefix'))
     ->middleware(config('social-shop.middleware'))
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('social-shop.dashboard');
