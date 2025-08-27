@@ -2,9 +2,9 @@
 
 namespace Ihasan\SocialShop\Tests;
 
+use Ihasan\SocialShop\SocialShopServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Ihasan\SocialShop\SocialShopServiceProvider;
 
 class TestCase extends Orchestra
 {
