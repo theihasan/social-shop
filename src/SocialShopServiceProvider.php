@@ -3,7 +3,6 @@
 namespace Ihasan\SocialShop;
 
 use Ihasan\SocialShop\Commands\SocialShopCommand;
-use Inertia\Middleware;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -45,8 +44,6 @@ class SocialShopServiceProvider extends PackageServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'social-shop');
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'social-shop');
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-        
-        $this->app['router']->aliasMiddleware('inertia', Middleware::class);
     }
 
     public function packageRegistered(): void
