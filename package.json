@@ -1,0 +1,27 @@
+{
+  "name": "social-shop",
+  "version": "1.0.0",
+  "description": "[![Latest Version on Packagist](https://img.shields.io/packagist/v/theihasan/social-shop.svg?style=flat-square)](https://packagist.org/packages/theihasan/social-shop) [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/theihasan/social-shop/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/theihasan/social-shop/actions?query=workflow%3Arun-tests+branch%3Amain) [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/theihasan/social-shop/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/theihasan/social-shop/actions?query=workflow%3A\"Fix+PHP+code+style+issues\"+branch%3Amain) [![Total Downloads](https://img.shields.io/packagist/dt/theihasan/social-shop.svg?style=flat-square)](https://packagist.org/packages/theihasan/social-shop)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theihasan/social-shop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/theihasan/social-shop/issues"
+  },
+  "homepage": "https://github.com/theihasan/social-shop#readme",
+  "dependencies": {
+    "@inertiajs/vue3": "^2.1.2"
+  }
+}
