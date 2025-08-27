@@ -35,10 +35,12 @@ class SocialShopServiceProvider extends PackageServiceProvider
 
         // Inertia Assets
         $this->publishes([
-            __DIR__.'/../resources/js' => resource_path('js/vendor/social-shop'),
-            __DIR__.'/../stubs/vite.social-shop.config.js' => base_path('vite.social-shop.config.js'),
-            // __DIR__ . '/../stubs/package.json.stub' => base_path('package.social-shop.json'), // Optional: for reference
-        ], 'social-shop-assets');
+               __DIR__.'/../resources/js' => resource_path('js/vendor/social-shop'),
+               __DIR__.'/../resources/css' => resource_path('css/vendor/social-shop'),
+               __DIR__.'/../resources/views/app.blade.php' => resource_path('views/vendor/social-shop/app.blade.php'),
+               __DIR__.'/../stubs/vite.social-shop.config.js' => base_path('vite.social-shop.config.js'),
+               __DIR__.'/../stubs/tailwind.social-shop.config.js' => base_path('tailwind.social-shop.config.js'),
+           ], 'social-shop-assets');
 
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'social-shop');
