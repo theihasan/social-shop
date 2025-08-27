@@ -25,13 +25,13 @@ class SocialShopServiceProvider extends PackageServiceProvider
             ])
             ->hasCommand(SocialShopCommand::class);
     }
-    
+
     public function packageBooted(): void
     {
         $this->publishes([
-            __DIR__ . '/../config/social-shop.php' => config_path('social-shop.php'),
-            __DIR__ . '/../resources/views' => resource_path('views/vendor/social-shop'),
-            __DIR__ . '/../database/migrations' => database_path('migrations'),
+            __DIR__.'/../config/social-shop.php' => config_path('social-shop.php'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor/social-shop'),
+            __DIR__.'/../database/migrations' => database_path('migrations'),
         ], 'social-shop');
         
         //Inertia Assets
@@ -51,6 +51,6 @@ class SocialShopServiceProvider extends PackageServiceProvider
 
     public function packageRegistered(): void
     {
-       $this->mergeConfigFrom(__DIR__ . '/../config/social-shop.php', 'social-shop');
+        $this->mergeConfigFrom(__DIR__.'/../config/social-shop.php', 'social-shop');
     }
 }
