@@ -40,6 +40,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import { usePage } from '@inertiajs/vue3'
 import SidebarItem from './SidebarItem.vue'
 
 const props = defineProps({
@@ -48,59 +49,61 @@ const props = defineProps({
 
 defineEmits(['close'])
 
+const page = usePage()
+
 const sidebarClasses = computed(() => [
   'fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0',
   props.open ? 'translate-x-0' : '-translate-x-full'
 ])
 
-const currentPath = window.location.pathname
+const currentUrl = computed(() => page.url || '')
 
-const navigationItems = [
+const navigationItems = computed(() => [
   {
     name: 'Dashboard',
     href: '/social-shop/dashboard',
     icon: 'dashboard',
-    active: currentPath.includes('/social-shop/dashboard') || currentPath === '/social-shop'
+    active: currentUrl.value.includes('/social-shop/dashboard') || currentUrl.value === '/social-shop'
   },
   {
     name: 'Catalog',
     href: '/social-shop/catalog',
     icon: 'catalog',
-    active: currentPath.includes('/social-shop/catalog')
+    active: currentUrl.value.includes('/social-shop/catalog')
   },
   {
     name: 'Orders',
     href: '/social-shop/orders',
     icon: 'orders',
     badge: '3',
-    active: currentPath.includes('/social-shop/orders')
+    active: currentUrl.value.includes('/social-shop/orders')
   },
   {
     name: 'Team Members',
     href: '/social-shop/users',
     icon: 'users',
-    active: currentPath.includes('/social-shop/users')
+    active: currentUrl.value.includes('/social-shop/users')
   }
-]
+])
 
-const platformItems = [
+const platformItems = computed(() => [
   {
     name: 'Facebook Shop',
     href: '/social-shop/facebook',
     icon: 'facebook',
-    active: currentPath.includes('/social-shop/facebook')
+    active: currentUrl.value.includes('/social-shop/facebook')
   },
   {
     name: 'Instagram Shop',
     href: '/social-shop/instagram',
     icon: 'instagram',
-    active: currentPath.includes('/social-shop/instagram')
+    active: currentUrl.value.includes('/social-shop/instagram')
   },
   {
     name: 'Settings',
     href: '/social-shop/settings',
     icon: 'settings',
-    active: currentPath.includes('/social-shop/settings')
+    active: currentUrl.value.includes('/social-shop/settings')
   }
-]
+])
 </script>
