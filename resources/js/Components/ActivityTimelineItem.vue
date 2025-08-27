@@ -1,7 +1,7 @@
 <template>
   <div class="relative flex items-start space-x-4">
     <div :class="iconContainerClasses">
-      <component :is="iconComponent" class="w-6 h-6" />
+      <span v-html="iconSvg"></span>
     </div>
     <div class="flex-1">
       <p class="font-semibold text-gray-900">{{ activity.title }}</p>
@@ -25,20 +25,19 @@ const iconContainerClasses = computed(() => [
   props.activity.type === 'info' ? 'bg-blue-100' : 'bg-meta-blue-light'
 ])
 
-const iconComponent = computed(() => {
-  const iconClasses = props.activity.type === 'success' ? 'text-green-600' :
+const iconSvg = computed(() => {
+  const iconClasses = `w-6 h-6 ${props.activity.type === 'success' ? 'text-green-600' :
     props.activity.type === 'warning' ? 'text-orange-600' :
-    props.activity.type === 'info' ? 'text-blue-600' : 'text-meta-blue'
+    props.activity.type === 'info' ? 'text-blue-600' : 'text-meta-blue'}`
 
-  // Return SVG template strings based on icon type
   const icons = {
-    check: () => `<svg class="${iconClasses}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    check: `<svg class="${iconClasses}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
     </svg>`,
-    plus: () => `<svg class="${iconClasses}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    plus: `<svg class="${iconClasses}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
     </svg>`,
-    warning: () => `<svg class="${iconClasses}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    warning: `<svg class="${iconClasses}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
     </svg>`
   }
