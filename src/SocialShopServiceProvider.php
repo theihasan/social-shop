@@ -2,9 +2,9 @@
 
 namespace Ihasan\SocialShop;
 
+use Ihasan\SocialShop\Commands\SocialShopCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Ihasan\SocialShop\Commands\SocialShopCommand;
 
 class SocialShopServiceProvider extends PackageServiceProvider
 {
