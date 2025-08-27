@@ -1,8 +1,7 @@
 <?php
 
-use Ihasan\SocialShopPro\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
-
+use Ihasan\SocialShop\Http\Controllers\DashboardController;
 
 
 Route::prefix(config('social-shop.prefix'))
