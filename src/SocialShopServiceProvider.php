@@ -41,11 +41,11 @@ class SocialShopServiceProvider extends PackageServiceProvider
             // __DIR__ . '/../stubs/package.json.stub' => base_path('package.social-shop.json'), // Optional: for reference
         ], 'social-shop-assets');
 
-        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'social-shop');
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'social-shop');
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-        
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'social-shop');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'social-shop');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+
         $this->app['router']->aliasMiddleware('inertia', Middleware::class);
     }
 
