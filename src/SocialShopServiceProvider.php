@@ -21,7 +21,7 @@ class SocialShopServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigrations([
-            'create_social_shop_table'
+                'create_social_shop_table',
             ])
             ->hasCommand(SocialShopCommand::class);
     }
@@ -33,12 +33,12 @@ class SocialShopServiceProvider extends PackageServiceProvider
             __DIR__.'/../resources/views' => resource_path('views/vendor/social-shop'),
             __DIR__.'/../database/migrations' => database_path('migrations'),
         ], 'social-shop');
-        
-        //Inertia Assets
+
+        // Inertia Assets
         $this->publishes([
-            __DIR__ . '/../resources/js' => resource_path('js/vendor/social-shop'),
-            __DIR__ . '/../stubs/vite.social-shop.config.js' => base_path('vite.social-shop.config.js'),
-            //__DIR__ . '/../stubs/package.json.stub' => base_path('package.social-shop.json'), // Optional: for reference
+            __DIR__.'/../resources/js' => resource_path('js/vendor/social-shop'),
+            __DIR__.'/../stubs/vite.social-shop.config.js' => base_path('vite.social-shop.config.js'),
+            // __DIR__ . '/../stubs/package.json.stub' => base_path('package.social-shop.json'), // Optional: for reference
         ], 'social-shop-assets');
 
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
