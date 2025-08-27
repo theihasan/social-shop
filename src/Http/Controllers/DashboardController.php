@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Dashboard', [
+        return Inertia::render('vendor/social-shop/Pages/Dashboard', [
             'kpis' => $this->getKpiData(),
             'recentOrders' => $this->getRecentOrders(),
             'activities' => $this->getActivityTimeline(),
