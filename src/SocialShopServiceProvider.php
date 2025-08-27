@@ -3,6 +3,7 @@
 namespace Ihasan\SocialShop;
 
 use Ihasan\SocialShop\Commands\SocialShopCommand;
+use Inertia\Middleware;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -19,7 +20,7 @@ class SocialShopServiceProvider extends PackageServiceProvider
             ->name('social-shop')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration([
+            ->hasMigrations([
             'create_social_shop_table'
             ])
             ->hasCommand(SocialShopCommand::class);
@@ -32,11 +33,20 @@ class SocialShopServiceProvider extends PackageServiceProvider
             __DIR__ . '/../resources/views' => resource_path('views/vendor/social-shop'),
             __DIR__ . '/../database/migrations' => database_path('migrations'),
         ], 'social-shop');
+        
+        //Inertia Assets
+        $this->publishes([
+            __DIR__ . '/../resources/js' => resource_path('js/vendor/social-shop'),
+            __DIR__ . '/../stubs/vite.social-shop.config.js' => base_path('vite.social-shop.config.js'),
+            //__DIR__ . '/../stubs/package.json.stub' => base_path('package.social-shop.json'), // Optional: for reference
+        ], 'social-shop-assets');
 
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'social-shop');
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'social-shop');
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        
+        // $this->app['router']->aliasMiddleware('inertia', Middleware::class);
     }
 
     public function packageRegistered(): void
