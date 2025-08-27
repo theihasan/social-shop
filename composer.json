@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "theihasan/social-shop",
+    "description": "Social Shop is a Laravel package for social commerce. It lets vendors sync product catalogs with Meta, manage inventory and pricing, handle orders, and enable customer checkout—all inside Laravel. Built with Vue 3 + Inertia.js, it’s extendable and ideal for developers delivering polished F-commerce solutions.",
     "keywords": [
-        ":vendor_name",
+        "Abul Hassan",
         "laravel",
-        ":package_slug"
+        "social-shop"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/theihasan/social-shop",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Abul Hassan",
+            "email": "imabulhasan99@gmail.com",
             "role": "Developer"
         }
     ],
@@ -30,18 +30,17 @@
         "pestphp/pest-plugin-laravel": "^4.0",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-deprecation-rules": "^2.0",
-        "phpstan/phpstan-phpunit": "^2.0",
-        "spatie/laravel-ray": "^1.35"
+        "phpstan/phpstan-phpunit": "^2.0"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Ihasan\\SocialShop\\": "src/",
+            "Ihasan\\SocialShop\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "Ihasan\\SocialShop\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -63,10 +62,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Ihasan\\SocialShop\\SocialShopServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "SocialShop": "Ihasan\\SocialShop\\Facades\\SocialShop"
             }
         }
     },

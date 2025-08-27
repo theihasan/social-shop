@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Ihasan\SocialShop\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class SocialShopCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'social-shop';
 
     public $description = 'My command';
 
