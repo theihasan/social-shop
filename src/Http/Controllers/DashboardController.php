@@ -14,6 +14,8 @@ class DashboardController extends Controller
             'recentOrders' => $this->getRecentOrders(),
             'activities' => $this->getActivityTimeline(),
             'title' => 'Shop Overview'
+        ])->withViewData([
+            'title' => 'Dashboard - Social Shop'
         ]);
     }
 

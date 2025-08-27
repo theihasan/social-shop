@@ -1,4 +1,5 @@
 <template>
+  <Head title="Dashboard - Social Shop" />
   <DashboardLayout>
     <div class="p-4 lg:p-6">
       <KPICards />
@@ -12,6 +13,7 @@
 </template>
 
 <script setup>
+import { Head } from '@inertiajs/vue3'
 import DashboardLayout from '../Layouts/DashboardLayout.vue'
 import KPICards from '../Components/KPICards.vue'
 import RecentOrders from '../Components/RecentOrders.vue'

@@ -53,28 +53,33 @@ const sidebarClasses = computed(() => [
   props.open ? 'translate-x-0' : '-translate-x-full'
 ])
 
+const currentPath = window.location.pathname
+
 const navigationItems = [
   {
     name: 'Dashboard',
     href: '/social-shop/dashboard',
     icon: 'dashboard',
-    active: true
+    active: currentPath.includes('/social-shop/dashboard') || currentPath === '/social-shop'
   },
   {
     name: 'Catalog',
     href: '/social-shop/catalog',
-    icon: 'catalog'
+    icon: 'catalog',
+    active: currentPath.includes('/social-shop/catalog')
   },
   {
     name: 'Orders',
     href: '/social-shop/orders',
     icon: 'orders',
-    badge: '3'
+    badge: '3',
+    active: currentPath.includes('/social-shop/orders')
   },
   {
     name: 'Team Members',
     href: '/social-shop/users',
-    icon: 'users'
+    icon: 'users',
+    active: currentPath.includes('/social-shop/users')
   }
 ]
 
@@ -82,17 +87,20 @@ const platformItems = [
   {
     name: 'Facebook Shop',
     href: '/social-shop/facebook',
-    icon: 'facebook'
+    icon: 'facebook',
+    active: currentPath.includes('/social-shop/facebook')
   },
   {
     name: 'Instagram Shop',
     href: '/social-shop/instagram',
-    icon: 'instagram'
+    icon: 'instagram',
+    active: currentPath.includes('/social-shop/instagram')
   },
   {
     name: 'Settings',
     href: '/social-shop/settings',
-    icon: 'settings'
+    icon: 'settings',
+    active: currentPath.includes('/social-shop/settings')
   }
 ]
 </script>
